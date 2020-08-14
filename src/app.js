@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const gioCode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const app = express();
+const port=process.env.PORT || 3030
 
 //Define pths for express routing
 const publicDirectoryPath=path.join(__dirname,'../public');
@@ -88,6 +89,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3030,()=>{
-    console.log('Server is up')
+app.listen(port,()=>{
+    console.log('Server is up' + port)
 })
